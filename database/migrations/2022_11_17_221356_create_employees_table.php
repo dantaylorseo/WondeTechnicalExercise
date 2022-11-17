@@ -24,8 +24,8 @@ return new class extends Migration
             $table->string('middle_names')->nullable();
             $table->string('legal_surname')->nullable();
             $table->string('legal_forename')->nullable();
-            $table->string('gender');
-            $table->date('date_of_birth');
+            $table->string('gender')->nullable();
+            $table->date('date_of_birth')->nullable();
             $table->timestamps();
         });
     }
