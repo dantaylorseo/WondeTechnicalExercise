@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('upi');
             $table->string('mis_id');
             $table->string('name');
-            $table->string('code');
+            $table->string('code')->nullable();
             $table->string('description')->nullable();
             $table->string('subject')->nullable();
             $table->string('alternative')->nullable();
