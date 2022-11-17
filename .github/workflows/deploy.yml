@@ -2,7 +2,7 @@ name: Deploy
 
 on:
   push:
-    branches: [ production ]
+    branches: [ dont_deploy_shown_for_example ]
 
 jobs:
   deploy:
