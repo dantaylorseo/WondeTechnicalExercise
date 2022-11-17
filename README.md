@@ -23,6 +23,17 @@ The brief has been kept deliberately vague to allow you scope to apply your own 
   * Email is `Dumbell@example.com`
   * Password is `Password123`
 
+## Installation
+1. Clone the repo
+2. Run `composer install`
+3. Run `npm install`
+4. Run `php artisan migrate` which creates the `sqlite` database at `database/database.sqlite`
+5. Run `php artisan run:queue` to pull data from the Wonde API
+6. Run `php artisan serve` to start the server
+
 ## Files/folders of note
 
-* `app/Http/Controllers/TeacherController.php` - The main controller for the teacher dashboard 
+* `app/Http/Models/*` - The models which hold the data
+* `app/database/migrations/*` - The migrations for the database
+* `app/database/database.sqlite` - The database (should be created by migrate, if not create it manually)
+* 
