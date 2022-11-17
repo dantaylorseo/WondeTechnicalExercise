@@ -15,7 +15,6 @@ return new class extends Migration
     {
         Schema::create('wonde_classes', function (Blueprint $table) {
             $table->string('id')->primary();
-            $table->string('upi');
             $table->string('mis_id');
             $table->string('name');
             $table->string('code')->nullable();
