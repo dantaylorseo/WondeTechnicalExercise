@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class WondeClass extends Model
 {
@@ -19,4 +20,14 @@ class WondeClass extends Model
      * @var boolean
      */
     public $incrementing = false;
+
+    /**
+     * Employees relationship
+     * 
+     * @return BelongsToMany
+     */
+    public function employees() : BelongsToMany
+    {
+        return $this->belongsToMany(Employee::class, 'wonde_classes_employees');
+    }
 }
