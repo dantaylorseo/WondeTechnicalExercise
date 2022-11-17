@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use Wonde\Client as WondeClient;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -13,7 +14,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->app->singleton(WondeClient::class, function () {
+            $client = new WondeClient(config('wonde.api_token'));
+            return $client;
+        });
     }
 
     /**
