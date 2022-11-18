@@ -19,7 +19,7 @@ The brief has been kept deliberately vague to allow you scope to apply your own 
 ## Caveats
 
 * The queue system is replaced by an Artisan command that can be run manually
-* The Teacher login is manually created from the first employee in the Wonde API that has classes
+* The Teacher login is manually created employee `A921160679` in the Wonde API
   * Email is `Dumbell@example.com`
   * Password is `Password123`
 
