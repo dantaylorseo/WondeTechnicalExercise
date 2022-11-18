@@ -19,7 +19,7 @@ The brief has been kept deliberately vague to allow you scope to apply your own 
 ## Caveats
 
 * The queue system is replaced by an Artisan command that can be run manually
-* The Teacher login is manually created employee `A921160679` in the Wonde API
+* The Teacher login is manually created from employee `A921160679` in the Wonde API
   * Email is `Dumbell@example.com`
   * Password is `Password123`
 
@@ -36,4 +36,4 @@ The brief has been kept deliberately vague to allow you scope to apply your own 
 * `app/Http/Models/*` - The models which hold the data
 * `app/database/migrations/*` - The migrations for the database
 * `app/database/database.sqlite` - The database (should be created by migrate, if not create it manually)
-* 
+* `app/Console/Commands/RunQueue.php` - The artisan command to pull data from the Wonde API
