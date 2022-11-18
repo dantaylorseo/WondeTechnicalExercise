@@ -20,7 +20,12 @@ class WondeClass extends Model
      * @var boolean
      */
     public $incrementing = false;
-
+    
+    /**
+     * Set the keyType to string so that relationships work
+     */
+    protected $keyType = 'string';
+    
     /**
      * Employees relationship
      * 
@@ -28,6 +33,6 @@ class WondeClass extends Model
      */
     public function employees() : BelongsToMany
     {
-        return $this->belongsToMany(Employee::class, 'wonde_classes_employees');
+        return $this->belongsToMany(Employee::class);
     }
 }

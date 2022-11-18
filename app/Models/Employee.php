@@ -9,7 +9,9 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 class Employee extends Model
 {
     use HasFactory;
-    
+
+    protected $with = ['classes'];
+
     /** 
      * Make all attributes mass assignable
      * 
@@ -23,6 +25,11 @@ class Employee extends Model
      * @var boolean
      */
     public $incrementing = false;
+    
+    /**
+     * Set the keyType to string so that relationships work
+     */
+    protected $keyType = 'string';
 
     /**
      * Classes relationship
@@ -31,6 +38,6 @@ class Employee extends Model
      */
     public function classes() : BelongsToMany
     {
-        return $this->belongsToMany(WondeClass::class, 'wonde_classes_employees');
+        return $this->belongsToMany(WondeClass::class);
     }
 }
