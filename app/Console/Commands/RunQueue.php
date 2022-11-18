@@ -3,6 +3,7 @@
 namespace App\Console\Commands;
 
 use App\Models\Employee;
+use App\Models\User;
 use Wonde\Client as WondeClient;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Validator;
@@ -105,6 +106,20 @@ class RunQueue extends Command
 
         $this->info('Employee saved');
 
+        if ($employee->contact_details && $employee->contact_details->data && $employee->contact_details->data->emails && $employee->contact_details->data->emails->email) {
+            User::updateOrCreate(
+                [
+                    'email' => $employee->contact_details->data->emails->email,
+                ],
+                [
+                    'name' => (!empty( $employee->forename ) ? $employee->forename . ' ' : '') . $employee->surname,
+                    'email' => $employee->contact_details->data->emails->email,
+                    'password' => bcrypt('Password123'),
+                    'employee_id' => $employee->id,
+                ]
+            );
+        }
+
         $this->_saveClassesToEmployee($employee->classes->data ?? [], $createdEmployee);
 
     }
@@ -138,7 +153,7 @@ class RunQueue extends Command
                 $this->error($validator->errors());
                 return;
             }
-            // dd($validator->validated());
+            
             $employee->classes()->updateOrCreate(
                 [
                     'id' => $class->id,
@@ -146,5 +161,7 @@ class RunQueue extends Command
                 $validator->validated()
             );
         });
+
+        $this->info('Classes saved');
     }
 }
