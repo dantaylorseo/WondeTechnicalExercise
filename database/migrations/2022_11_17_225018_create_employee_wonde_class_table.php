@@ -13,9 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('wonde_classes_employees', function (Blueprint $table) {
-            $table->foreignId('wonde_class_id')->constrained('wonde_classes');
-            $table->foreignId('employee_id')->constrained('employees');
+        Schema::create('employee_wonde_class', function (Blueprint $table) {
+            $table->string('wonde_class_id');
+            $table->string('employee_id');
         });
     }
 
@@ -26,6 +26,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('wonde_classes_employees');
+        Schema::dropIfExists('employee_wonde_class');
     }
 };
