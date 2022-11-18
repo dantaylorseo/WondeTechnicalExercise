@@ -5,12 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\HasManyThrough;
 
 class Employee extends Model
 {
     use HasFactory;
-
-    protected $with = ['classes'];
 
     /** 
      * Make all attributes mass assignable
@@ -40,4 +39,5 @@ class Employee extends Model
     {
         return $this->belongsToMany(WondeClass::class);
     }
+    
 }

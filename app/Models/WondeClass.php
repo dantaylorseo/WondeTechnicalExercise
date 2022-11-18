@@ -35,4 +35,24 @@ class WondeClass extends Model
     {
         return $this->belongsToMany(Employee::class);
     }
+
+    /**
+     * Students relationship
+     * 
+     * @return BelongsToMany
+     */
+    public function students() : BelongsToMany
+    {
+        return $this->belongsToMany(Student::class);
+    }
+
+    /**
+     * Lessons relationship
+     * 
+     * @return BelongsToMany
+     */
+    public function lessons() : BelongsToMany
+    {
+        return $this->belongsToMany(Lesson::class);
+    }
 }
