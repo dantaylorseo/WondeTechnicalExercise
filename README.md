@@ -37,3 +37,5 @@ The brief has been kept deliberately vague to allow you scope to apply your own 
 * `app/database/migrations/*` - The migrations for the database
 * `app/database/database.sqlite` - The database (should be created by migrate, if not create it manually)
 * `app/Console/Commands/RunQueue.php` - The artisan command to pull data from the Wonde API
+* `tests/Unit/*` - The unit tests
+* `tests/Feature/*` - The feature tests
