@@ -14,7 +14,7 @@ The brief has been kept deliberately vague to allow you scope to apply your own 
 
 * There is a stable and secure login system in place
 * A teacher would have a login to get to a full admin panel
-* Data woudld be pulled from the Wonde API periodically (I think I saw hourly mentioned?) using a queue system
+* Data would be pulled from the Wonde API periodically (I think I saw hourly mentioned?) using a queue system
 
 ## Caveats
 
