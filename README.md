@@ -22,6 +22,8 @@ The brief has been kept deliberately vague to allow you scope to apply your own 
 * The Teacher login is manually created from employee `A921160679` in the Wonde API
   * Email is `Dumbell@example.com`
   * Password is `Password123`
+* Written tests are representative of what I would normally do, not comprehensive
+  * I would usually mock the Wonde API and test the API calls in isolation to have stable data
 
 ## Installation
 1. Clone the repo
