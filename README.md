@@ -25,11 +25,13 @@ The brief has been kept deliberately vague to allow you scope to apply your own 
 
 ## Installation
 1. Clone the repo
-2. Run `composer install`
-3. Run `npm install`
-4. Run `php artisan migrate` which creates the `sqlite` database at `database/database.sqlite`
-5. Run `php artisan run:queue` to pull data from the Wonde API
-6. Run `php artisan serve` to start the server
+2. Copy `.env.example` to `.env`
+3. Edit `.env` to set your Wonde API key
+4. Run `composer install`
+5. Run `npm install`
+6. Run `php artisan migrate` which creates the `sqlite` database at `database/database.sqlite`
+7. Run `php artisan run:queue` to pull data from the Wonde API
+8. Run `php artisan serve` to start the server
 
 ## Files/folders of note
 
